@@ -1,0 +1,217 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.7">
+  <world name="default">
+
+    <!-- Plugin for simulating physics -->
+    <plugin
+      filename="gz-sim-physics-system"
+      name="gz::sim::systems::Physics">
+    </plugin>
+
+    <!-- Plugin for handling user commands -->
+    <plugin
+      filename="gz-sim-user-commands-system"
+      name="gz::sim::systems::UserCommands">
+    </plugin>
+
+    <!-- Plugin for broadcasting scene updates -->
+    <plugin
+      filename="gz-sim-scene-broadcaster-system"
+      name="gz::sim::systems::SceneBroadcaster">
+    </plugin>
+
+    <!-- Plugin for sensor handling -->
+    <plugin
+      filename="gz-sim-sensors-system"
+      name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <!-- To add realistic gravity, do: 0.0 0.0 -9.8, otherwise do 0.0 0.0 0.0 -->
+    <gravity>0.0 0.0 -9.8</gravity>
+
+    <!-- Include a model of the Sun from an external URI -->
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun
+      </uri>
+    </include>
+
+    <!-- Include a model of the Ground Plane from an external URI -->
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground Plane
+      </uri>
+    </include>
+
+    <!-- Include the cylinder model -->
+    <!-- <include>
+      <uri>model://red_cylinder</uri>
+      <name>red_cylinder</name>
+      <pose>0.22 0.12 0.175 0 0 0</pose>
+    </include> -->
+
+    <!--  Include the other objects --> 
+
+    <!-- <include>
+      <uri>model://mustard</uri>
+      <pose>0.7 0.15 0.08 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://cheezit_big_original</uri>
+      <pose>0.64 0.23 0.17 1.571 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://cardboard_box</uri>
+      <pose>0.65 0.60 0.3 0 0 0.5</pose>
+    </include>
+
+    <include>
+      <uri>model://coke_can</uri>
+      <pose>0.5 0.15 0.15 0 0 2.3</pose>
+    </include>  -->
+
+   <include>
+   <uri>
+      model://small_table
+  </uri>
+    <pose>0.0 0.35 0.0 0 0 0</pose> 
+  </include> 
+
+  <!-- <include>
+    <uri>
+      https://fuel.gazebosim.org/1.0/OpenRobotics/models/Table
+    </uri>
+    <scale>0.1 0.1 0.1</scale> 
+  </include> -->
+  <!-- <include>
+    <uri>
+      https://fuel.gazebosim.org/1.0/OpenRobotics/models/Table Marble
+    </uri>
+  </include> -->
+
+  <model name='red_cube'>
+      <pose>0.1 0.3 0.275 0 0 0</pose> <link name='link'>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.000083</ixx> <ixy>0</ixy> <ixz>0</ixz>
+            <iyy>0.000083</iyy> <iyz>0</iyz> <izz>0.000083</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.05 0.05 0.05</size> </box>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.05 0.05 0.05</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1.0 0.0 0.0 1.0</ambient> <diffuse>1.0 0.0 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name='blue_sphere'>
+      <pose>-0.1 0.28 0.275 0 0 0</pose> <link name='link'>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.000083</ixx> <ixy>0</ixy> <ixz>0</ixz>
+            <iyy>0.000083</iyy> <iyz>0</iyz> <izz>0.000083</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <sphere>
+              <radius>0.025</radius> </sphere>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <sphere>
+              <radius>0.025</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 1.0 1.0</ambient> <diffuse>0.0 0.0 1.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name='green_cylinder'>
+      <pose>0.0 0.32 0.275 0 0 0</pose> <link name='link'>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.000083</ixx> <ixy>0</ixy> <ixz>0</ixz>
+            <iyy>0.000083</iyy> <iyz>0</iyz> <izz>0.000083</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.025</radius> <length>0.05</length>  </cylinder>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.025</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.0 1.0 0.0 1.0</ambient> <diffuse>0.0 1.0 0.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+
+       <model name='red_sphere'>
+      <pose>0.0 0.4 0.275 0 0 0</pose> <link name='link'>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.000083</ixx> <ixy>0</ixy> <ixz>0</ixz>
+            <iyy>0.000083</iyy> <iyz>0</iyz> <izz>0.000083</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <sphere>
+              <radius>0.025</radius> </sphere>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <sphere>
+              <radius>0.025</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1.0 0.0 1.0 1.0</ambient> <diffuse>1.0 0.0 1.0 1.0</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+
+    <!-- Define scene properties -->
+    <scene>
+      <shadows>false</shadows>
+    </scene>
+
+  </world>
+</sdf>
