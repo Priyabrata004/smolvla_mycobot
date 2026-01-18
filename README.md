@@ -90,7 +90,7 @@ Camera Image + Language Prompt
 
 ### Prerequisites
 - ROS 2 (Humble or later recommended)
-- Gazebo
+- Gazebo Ignition Fortress
 - Python 3.8+
 - PyTorch
 - LeRobot / SmolVLA dependencies
