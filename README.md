@@ -41,6 +41,7 @@ smolvla_mycobot/
 ├── utils/                    # Helper scripts and utilities
 └── README.md
 
+---
 
 ## 🧠 System Overview
 
