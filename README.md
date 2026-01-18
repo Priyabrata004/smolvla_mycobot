@@ -41,7 +41,7 @@ smolvla_mycobot/
 ├── utils/                    # Helper scripts and utilities
 └── README.md
 
-'''
+```
 
 ## 🧠 System Overview
 
@@ -59,7 +59,7 @@ Camera Image + Language Prompt
      ROS 2 Joint Trajectory
             ↓
           Robot
-
+```
 
 ## 🔍 How It Works
 
@@ -104,16 +104,23 @@ cd ..
 rosdep install -i --from-path src --rosdistro humble -y
 colcon build --symlink-install
 source install/setup.bash
-
+```
 
 ## ▶️ Running the System
 
 ### Launch Gazebo Simulation
 
+Navigate to mycobot_bringup/scripts
 ```bash
-ros2 launch mycobot_gazebo gazebo.launch.py
+bash mycobot_280_gazebo.sh
 
-ros2 run mycobot_ros2 smolvla_realtime.py
+```
+
+### Launch Inference Script
+Navigate to mycobot_system_tests/scripts
+```bash
+python smolvla_realtime.py
+```
 
 ## ⚠️ Current Limitations
 
@@ -158,3 +165,4 @@ Please refer to individual submodules for their respective licenses.
 - SmolVLA and LeRobot community
 - ROS 2 and Gazebo ecosystem
 - Elephant Robotics myCobot platform
+- Automatic Addison YT Channel
